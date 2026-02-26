@@ -1,0 +1,23 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code
+.claude/
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+build/
+
+# Environment
+.env
+.env.local
