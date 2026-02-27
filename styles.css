@@ -49,7 +49,7 @@ body {
   font-weight: var(--fw-regular);
   font-size: 1rem;
   line-height: 1.75;
-  color: var(--grey-dark);
+  color: var(--near-black);
   background: var(--white);
 }
 
@@ -444,7 +444,18 @@ strong {
 }
 
 /* ============================================================
-   SECTION 4: PILLARS
+   SECTION 4: WHO WE ARE
+   ============================================================ */
+.who-we-are__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+  margin-bottom: 2rem;
+}
+
+/* ============================================================
+   SECTION 4: PILLARS (legacy)
    ============================================================ */
 .pillars {
   display: grid;
@@ -590,7 +601,7 @@ strong {
 
 .story__reflection {
   font-style: italic;
-  color: var(--grey-light);
+  color: var(--grey-dark);
   border-left: 3px solid var(--green);
   padding-left: 1rem;
   margin-top: 1.25rem;
@@ -926,6 +937,36 @@ strong {
   color: rgba(255, 255, 255, 0.35);
 }
 
+/* ---------- Back to Top Button ---------- */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, background 0.2s ease;
+  z-index: 999;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--white);
+}
+
 /* ============================================================
    VISUAL ENHANCEMENTS
    ============================================================ */
@@ -1231,6 +1272,15 @@ strong {
   .letter__photo-img {
     max-width: 200px;
     margin: 0 auto;
+  }
+
+  .who-we-are__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .who-we-are__grid .story__image {
+    min-height: 280px;
   }
 
   .pillars {

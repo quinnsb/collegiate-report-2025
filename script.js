@@ -123,7 +123,19 @@
     scrollIndicator.style.cursor = 'pointer';
   }
 
-  /* ---------- 5. Map Dot Tooltips (optional enhancement) ---------- */
+  /* ---------- 5. Back to Top Button ---------- */
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > window.innerHeight) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }, { passive: true });
+  }
+
+  /* ---------- 6. Map Dot Tooltips (optional enhancement) ---------- */
   const mapDots = document.querySelectorAll('.us-map__dot');
   mapDots.forEach((dot) => {
     dot.addEventListener('mouseenter', function () {
