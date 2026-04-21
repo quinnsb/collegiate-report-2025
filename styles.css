@@ -923,8 +923,16 @@ strong {
 .footer {
   background: var(--near-black);
   color: rgba(255, 255, 255, 0.6);
-  padding: 3rem 0;
+  padding: 5rem 0 4rem;
   text-align: center;
+}
+
+.footer__letsgo {
+  display: block;
+  max-width: 320px;
+  width: 60%;
+  margin: 0 auto 3rem;
+  opacity: 0.9;
 }
 
 .footer__logo {
