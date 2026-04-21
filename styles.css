@@ -929,8 +929,8 @@ strong {
 
 .footer__letsgo {
   display: block;
-  max-width: 320px;
-  width: 60%;
+  max-width: 260px;
+  width: 50%;
   margin: 0 auto 3rem;
   opacity: 0.9;
 }
