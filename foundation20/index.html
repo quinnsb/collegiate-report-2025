@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundation 20 — Collegiate Church Network</title>
+  <meta name="description" content="Celebrating 20 years and building the next chapter. Foundation 20 is CCN's recurring giving initiative.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Foundation 20 page-specific styles */
+    .f20-hero {
+      background: var(--near-black);
+      color: var(--white);
+      padding: 7rem 0 5rem;
+      text-align: center;
+    }
+
+    .f20-hero__logo {
+      height: 44px;
+      margin: 0 auto 3rem;
+      opacity: 0.9;
+    }
+
+    .f20-hero__label {
+      font-size: 0.8rem;
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    .f20-hero__title {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: var(--fw-extra);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .f20-hero__subtitle {
+      font-size: 0.85rem;
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .f20-hero__subtitle span {
+      color: rgba(255,255,255,0.5);
+      margin: 0 0.75rem;
+    }
+
+    /* Stats section */
+    .f20-stats {
+      background: var(--green);
+      color: var(--white);
+      padding: var(--section-padding);
+      text-align: center;
+    }
+
+    .f20-stats__label {
+      font-size: 0.75rem;
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      opacity: 0.85;
+    }
+
+    .f20-stats__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .f20-stat__number {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: var(--fw-extra);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .f20-stat__text {
+      font-size: 0.9rem;
+      font-weight: var(--fw-semi);
+      line-height: 1.4;
+      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .f20-stats__callout {
+      font-size: 1rem;
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.95;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      padding-top: 2.5rem;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Story section */
+    .f20-story {
+      background: var(--off-white);
+      padding: var(--section-padding);
+    }
+
+    .f20-story__inner {
+      max-width: var(--container-narrow);
+      margin: 0 auto;
+    }
+
+    .f20-story p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--grey-dark);
+    }
+
+    .f20-story p strong {
+      color: var(--near-black);
+    }
+
+    /* Next chapter section */
+    .f20-next {
+      background: var(--white);
+      padding: var(--section-padding);
+    }
+
+    .f20-next__inner {
+      max-width: var(--container-narrow);
+      margin: 0 auto;
+    }
+
+    .f20-next p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--grey-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .f20-next__quote {
+      border-left: 4px solid var(--green);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      background: var(--off-white);
+    }
+
+    .f20-next__quote p {
+      font-size: 1rem;
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--near-black);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .f20-next__quote p + p {
+      margin-top: 0.5rem;
+    }
+
+    /* Partner tiers */
+    .f20-tiers {
+      background: var(--near-black);
+      color: var(--white);
+      padding: var(--section-padding);
+      text-align: center;
+    }
+
+    .f20-tiers__table {
+      max-width: 700px;
+      margin: 2.5rem auto 0;
+      width: 100%;
+    }
+
+    .f20-tier {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: left;
+    }
+
+    .f20-tier:last-child {
+      border-bottom: none;
+    }
+
+    .f20-tier__name {
+      font-size: 0.8rem;
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .f20-tier__amount {
+      font-size: 0.8rem;
+      font-weight: var(--fw-semi);
+      color: rgba(255,255,255,0.55);
+      white-space: nowrap;
+    }
+
+    .f20-tier__badge {
+      font-size: 0.7rem;
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2rem;
+      white-space: nowrap;
+    }
+
+    .f20-tier__badge--goal {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .f20-tier__badge--open {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* CTA */
+    .f20-cta {
+      background: var(--white);
+      padding: var(--section-padding);
+      text-align: center;
+    }
+
+    .f20-cta__tagline {
+      font-size: 0.75rem;
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--grey-light);
+      margin-bottom: 2rem;
+    }
+
+    .f20-cta__tagline span {
+      margin: 0 0.5rem;
+    }
+
+    .f20-cta__button {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      font-family: var(--font);
+      font-size: 0.85rem;
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      border-radius: 0.25rem;
+      transition: background 0.2s ease;
+    }
+
+    .f20-cta__button:hover {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+
+    @media (max-width: 640px) {
+      .f20-stats__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .f20-tier {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HERO ==================== -->
+  <header class="f20-hero">
+    <div class="container">
+      <img src="../Logos/White Horizontal Stack.png" alt="Collegiate Church Network" class="f20-hero__logo">
+      <p class="f20-hero__label">Celebrating 20 Years <span>·</span> Building the Next Chapter</p>
+      <h1 class="f20-hero__title">Foundation 20</h1>
+    </div>
+  </header>
+
+  <!-- ==================== THE MOMENT WE'RE IN ==================== -->
+  <section class="f20-stats">
+    <div class="container">
+      <p class="f20-stats__label">The Moment We're In</p>
+      <div class="f20-stats__grid">
+        <div>
+          <div class="f20-stat__number">16%</div>
+          <div class="f20-stat__text">of Gen Z attend church weekly</div>
+        </div>
+        <div>
+          <div class="f20-stat__number">36%</div>
+          <div class="f20-stat__text">of college students have never attended church</div>
+        </div>
+        <div>
+          <div class="f20-stat__number">35–60%</div>
+          <div class="f20-stat__text">report anxiety, depression, or deep hopelessness</div>
+        </div>
+      </div>
+      <p class="f20-stats__callout">The need is not shrinking. The mission has never mattered more.</p>
+    </div>
+  </section>
+
+  <!-- ==================== STORY ==================== -->
+  <section class="f20-story">
+    <div class="container">
+      <div class="f20-story__inner">
+        <h2 class="section__label section__label--bar">What Twenty Years Produces</h2>
+        <p>Fig arrived at Western Michigan University wanting nothing to do with God or church. She was battling anxiety, depression, and deep hopelessness. Through H2O Church Kalamazoo, she encountered Jesus. Today she says simply, <strong>"Jesus saved my life."</strong> She is now leading others to faith.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== THE NEXT CHAPTER ==================== -->
+  <section class="f20-next">
+    <div class="container">
+      <div class="f20-next__inner">
+        <h2 class="section__label section__label--bar">The Next Chapter</h2>
+        <p>This year marks our 20th anniversary and the beginning of what comes next. Foundation 20 is our recurring giving initiative, building the stable annual base from which CCN's next chapter will launch.</p>
+        <p>This is not a one-time campaign. It is the beginning of a sustained culture of generosity that will fuel church planting, leader development, and campus mission for years to come.</p>
+        <div class="f20-next__quote">
+          <p>A one-time gift funds a moment.</p>
+          <p>A recurring commitment funds a movement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PARTNER TIERS ==================== -->
+  <section class="f20-tiers">
+    <div class="container">
+      <h2 class="section__label" style="color: rgba(255,255,255,0.5); letter-spacing: 0.18em;">Become a Foundation 20 Partner</h2>
+      <div class="f20-tiers__table">
+        <div class="f20-tier">
+          <div class="f20-tier__name">Cornerstone Partner</div>
+          <div class="f20-tier__amount">$5,000+ per year</div>
+          <span class="f20-tier__badge f20-tier__badge--goal">20 Partner Goal</span>
+        </div>
+        <div class="f20-tier">
+          <div class="f20-tier__name">Foundation Partner</div>
+          <div class="f20-tier__amount">$1,000–$4,999 per year</div>
+          <span class="f20-tier__badge f20-tier__badge--open">Open Enrollment</span>
+        </div>
+        <div class="f20-tier">
+          <div class="f20-tier__name">Mission Partner</div>
+          <div class="f20-tier__amount">$100–$999 per year</div>
+          <span class="f20-tier__badge f20-tier__badge--open">Open Enrollment</span>
+        </div>
+        <div class="f20-tier">
+          <div class="f20-tier__name">Church Partner</div>
+          <div class="f20-tier__amount">Annual commitment</div>
+          <span class="f20-tier__badge f20-tier__badge--goal">20 Partner Goal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="f20-cta">
+    <div class="container">
+      <p class="f20-cta__tagline">From the Campus <span>·</span> For the Kingdom</p>
+      <a href="https://collegiate.church/give" target="_blank" rel="noopener" class="f20-cta__button">Give at collegiate.church/give</a>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <img src="../Logos/White Horizontal Stack.png" alt="Collegiate Church Network" class="footer__logo">
+      <div class="footer__links">
+        <a href="https://collegiate.church" target="_blank" rel="noopener">collegiate.church</a>
+        <a href="https://www.facebook.com/collegiatechurchnetwork" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/collegiatechurchnetwork" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+      <p class="footer__copyright">&copy; 2025 Collegiate Church Network. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
